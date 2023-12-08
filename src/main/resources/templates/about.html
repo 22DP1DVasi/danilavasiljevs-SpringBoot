@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+
+    <style>
+        h1 {
+            color: palevioletred;
+            background-color: black;
+        }
+
+        #myName {
+            color: blue;
+        }
+
+        #mySurname {
+            color: teal;
+        }
+
+        #myAge {
+            color: indigo;
+        }
+
+        #myGroup {
+            color: firebrick;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Informācija par mani</h1>
+    <p th:text="${name}" id="myName"></p>
+    <p th:text="${surname}" id="mySurname"></p>
+    <p th:text="${age}" id="myAge"></p>
+    <p th:text="${group}" id="myGroup"></p>
+</body>
+</html>

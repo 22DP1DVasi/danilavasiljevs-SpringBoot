@@ -19,15 +19,13 @@
             background-color: slateblue;
             border: 2px solid darkgoldenrod;
             border-radius: 5px;
-            box-shadow: 0 0 50px rgba(20, 30, 50, alpha);
+            box-shadow: 0 0 50px rgba(30, 50, 32);
 
         }
 
     </style>
 </head>
 <body>
-    <!--<p>Get your student <a href="/student">here</a></p>
-    //<h1>Spring Boot!</h1>-->
     <h1>Tas ir mana portfolio mājas lapa</h1>
     <p>
         Mani sauc Jānis!
@@ -43,12 +41,12 @@
 
     </ol>
 
-    <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    <p>Get your student <a href="/student">here</a></p>
+    <p th:text="${name}"></p>
+    <p th:text="${surname}"></p>
+    <p th:text="${age}"></p>
+    <p th:text="${group}"></p>
+
 
 </body>
 </html>
