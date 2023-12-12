@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class DefaultController {
@@ -13,18 +14,34 @@ public class DefaultController {
         return "index";
     }
 
+    // @GetMapping(value = "/about")
+    // String aboutMe(Model model) {
+    //     String name = "Danila";
+    //     String surname = "Vasiljevs";
+    //     int age = 17;
+    //     String group = "DP2-1";
+    //     model.addAttribute("name", name);
+    //     model.addAttribute("surname", surname);
+    //     model.addAttribute("age", age);
+    //     model.addAttribute("group", group);
+
+    //     return "about";
+    // }
+
     @GetMapping(value = "/about")
-    String aboutMe(Model model) {
+    ModelAndView about(){
+        ModelAndView modelAndView = new ModelAndView("about");
+
         String name = "Danila";
         String surname = "Vasiljevs";
         int age = 17;
         String group = "DP2-1";
-        model.addAttribute("name", name);
-        model.addAttribute("surname", surname);
-        model.addAttribute("age", age);
-        model.addAttribute("group", group);
+        modelAndView.addObject("name", name);
+        modelAndView.addObject("surname", surname);
+        modelAndView.addObject("age", age);
+        modelAndView.addObject("group", group);
 
-        return "about";
+        return modelAndView;
     }
 
     
