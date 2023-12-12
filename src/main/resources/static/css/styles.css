@@ -1,0 +1,32 @@
+h1 {
+    color: palevioletred;
+    background-color: black;
+}
+
+#myName {
+    color: blue;
+}
+
+#mySurname {
+    color: teal;
+}
+
+#myAge {
+    color: indigo;
+}
+
+#myGroup {
+    color: firebrick;
+}
+
+p {
+    color: red;
+}
+
+button {
+    background-color: slateblue;
+    border: 2px solid darkgoldenrod;
+    border-radius: 5px;
+    box-shadow: 0 0 50px rgba(30, 50, 32);
+
+}
