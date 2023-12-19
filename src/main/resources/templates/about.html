@@ -16,5 +16,10 @@
     <p th:text="${age}" id="myAge"></p>
     <p th:text="${group}" id="myGroup"></p>
     
+    <h3>About lapa!</h3>
+
+    <h3 th:text="'Sveiki, tevi sauc - ' + ${param.name}"></h3>
+    <p th:text="'Sveiki, tavs vecums ir - ' + ${param.age}"></p>
+
 </body>
 </html>

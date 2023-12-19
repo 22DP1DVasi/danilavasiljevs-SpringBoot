@@ -1,5 +1,7 @@
 package rvt;
 
+import java.util.HashMap;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,21 +30,59 @@ public class DefaultController {
     //     return "about";
     // }
 
-    @GetMapping(value = "/about")
-    ModelAndView about(){
-        ModelAndView modelAndView = new ModelAndView("about");
+    // @GetMapping(value = "/about")
+    // ModelAndView about(){
+    //     ModelAndView modelAndView = new ModelAndView("about");
 
-        String name = "Danila";
-        String surname = "Vasiljevs";
-        int age = 17;
-        String group = "DP2-1";
-        modelAndView.addObject("name", name);
-        modelAndView.addObject("surname", surname);
-        modelAndView.addObject("age", age);
-        modelAndView.addObject("group", group);
+    //     String name = "Danila";
+    //     String surname = "Vasiljevs";
+    //     int age = 17;
+    //     String group = "DP2-1";
+    //     modelAndView.addObject("name", name);
+    //     modelAndView.addObject("surname", surname);
+    //     modelAndView.addObject("age", age);
+    //     modelAndView.addObject("group", group);
+
+    //     return modelAndView;
+    // }
+
+    @GetMapping(value = "/about")
+    ModelAndView about(
+
+        @RequestParam HashMap<String, String> querStringParams
+
+    ) {
+        // HashMap<String, String> car1 = new HashMap<>(); // dictionary
+
+        // car1.put("brand", "Ford");                   // insert key-value pair
+        // car1.put("model", "Mustang");
+
+        // car1.get("brand");                            // get value
+
+
+        // String name = querStringParams.get("name");
+        // String age = querStringParams.get("age");
+
+        ModelAndView modelAndView = new ModelAndView("about");
+        // modelAndView.addObject("name", name);
+        // modelAndView.addObject("age", age);
+
+        // String name = querStringParams.get("name");
+        // name = String.format("$@ %s @$", name);      // formatting
+        // modelAndView.addObject("name", name);
+
+        String id = querStringParams.get("name");
+        String title = querStringParams.get("title");
+        String description = querStringParams.get("description");
+
+        CsvManager manager = new CsvManager(CsvManager.HOBBIES_CSV);
+        manager.addHobbyToCSV(id, title, description);
+        // turpināt veidot html formu
 
         return modelAndView;
     }
 
     
 }
+
+// https://www.baeldung.com/spring-request-param
