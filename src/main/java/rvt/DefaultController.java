@@ -75,8 +75,8 @@ public class DefaultController {
         String title = querStringParams.get("title");
         String description = querStringParams.get("description");
 
-        CsvManager manager = new CsvManager(CsvManager.HOBBIES_CSV);
-        manager.addHobbyToCSV(id, title, description);
+        // CsvManager manager = new CsvManager(CsvManager.HOBBIES_CSV);
+        // manager.addHobbyToCSV(id, title, description);
         // turpināt veidot html formu
 
         return modelAndView;
