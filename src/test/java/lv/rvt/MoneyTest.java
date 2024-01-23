@@ -1,15 +1,11 @@
 // test file for Money code
 
 package lv.rvt;
-
 import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;  // test library
-
 import rvt.Money;
 
 public class MoneyTest {
-
     @Test
     public void testPlusMethod() {                  // Unit testing - testing of methods
         Money mon1 = new Money(5, 10);
@@ -27,6 +23,16 @@ public class MoneyTest {
 
         assertEquals(6, result2.euros());
         assertEquals(88, result2.cents());
+    }
+
+    @Test
+    public void testLessThan() {
+        Money mon1 = new Money(10, 0);
+        Money mon2 = new Money(3, 0);
+        Money mon3 = new Money(5, 0);
+
+        assertEquals(false, mon1.lessThan(mon2));
+        assertEquals(true, mon2.lessThan(mon3));
     }
 
     @Test
