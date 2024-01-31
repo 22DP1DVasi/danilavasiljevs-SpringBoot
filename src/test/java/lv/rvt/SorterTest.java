@@ -4,10 +4,10 @@ import org.junit.Test;
 
 import rvt.MainProgram;
 import rvt.Sorter;
-import scala.collection.immutable.ArraySeq;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import Arrays;
+import java.util.ArrayList;
 
 public class SorterTest {
 
@@ -32,16 +32,39 @@ public class SorterTest {
         assertEquals(3, Sorter.indexOfSmallestFrom(numbers, 2));
     }
 
-    
-    public void testSwap() {
+    @Test
+    public void testSwap(){
         int[] numbers = {3, 2, 5, 4, 8};
-        
-        System.out.println(Arrays.toString(numbers));
-
+        int[] numbersToTest1 = {2, 3, 5, 4, 8};
         Sorter.swap(numbers, 1, 0);
-        System.out.println(Arrays.toString(numbers));
+        assertArrayEquals(numbersToTest1, numbers);
 
+        int[] numbersToTest2 = {4, 3, 5, 2, 8};
         Sorter.swap(numbers, 0, 3);
-        System.out.println(Arrays.toString(numbers));
+        assertArrayEquals(numbersToTest2, numbers);
     }
+
+    @Test
+    public void testSort(){
+        int[] numbers = {8, 3, 7, 9, 1, 2, 4};
+        int[] sortedNumbers = {1, 2, 3, 4, 7, 8, 9};
+        Sorter.sort(numbers);
+
+        assertArrayEquals(sortedNumbers, numbers);
+    }
+
+    @Test
+    public void testBinarySearch(){
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        numbers.add(9);
+        numbers.add(-2);
+        numbers.add(55);
+        numbers.add(0);
+        numbers.add(-20);
+        numbers.add(800);
+
+        // ArrayList gets sorted. It must sorted for method to work
+        assertEquals(5, Sorter.binarySearch(numbers, 800));
+    }
+
 }
