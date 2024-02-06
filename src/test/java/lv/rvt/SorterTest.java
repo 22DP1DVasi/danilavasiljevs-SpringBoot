@@ -3,7 +3,7 @@ package lv.rvt;
 import org.junit.Test;
 
 import rvt.MainProgram;
-import rvt.Sorter;
+import rvt.exercises.Sorter;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;

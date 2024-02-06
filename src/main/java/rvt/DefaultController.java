@@ -6,7 +6,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import rvt.temp.A;
+import rvt.temp.B;
+import rvt.temp.C;
 
 @Controller
 public class DefaultController {
@@ -79,10 +84,25 @@ public class DefaultController {
         // manager.addHobbyToCSV(id, title, description);
         // turpināt veidot html formu
 
+        C c = new C();
+
+        c.a();
+        c.b();
+        c.c();
+        System.out.println();
+
         return modelAndView;
     }
 
-    
+    @GetMapping(value = "/test")
+    @ResponseBody()
+    public String testAction(){
+        String name = "John";
+        String name1 = "John1";
+        String name2 = "John2";
+
+        return name + "<hr>" + name1 + "<hr>" + name2 + "<hr>";
+    }
 }
 
 // https://www.baeldung.com/spring-request-param

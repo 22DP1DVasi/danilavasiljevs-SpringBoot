@@ -1,4 +1,4 @@
-package rvt;
+package rvt.exercises;
 
 import java.util.ArrayList;
 import java.util.Collections;  // Import the Collections class
