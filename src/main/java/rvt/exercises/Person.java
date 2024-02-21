@@ -28,5 +28,5 @@ public class Person {
         System.out.println(ada);
         System.out.println(esko);
     }
-
 }
+

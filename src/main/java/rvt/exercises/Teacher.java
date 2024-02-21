@@ -30,8 +30,8 @@ public class Teacher extends Person {
         while (i < 25) {
         ollie.study();
         i = i + 1;
-        }
         System.out.println(ollie);
+    }
     }
 
 }
