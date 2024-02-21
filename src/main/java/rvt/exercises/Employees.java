@@ -11,7 +11,7 @@ public class Employees {
 
     public Employees(){
         this.persons = new ArrayList<PersonEd>();
-    };
+    }
 
     public void add(PersonEd personToAdd){
         persons.add(personToAdd);
